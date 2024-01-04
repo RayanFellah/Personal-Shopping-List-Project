@@ -1,0 +1,24 @@
+<div class="signup">
+    <form [formGroup]="form">
+        <label for="chk" aria-hidden="true">Sign up</label>
+        <input type="text" name="txt" placeholder="User name" required="" formControlName = 'name'>
+        <div *ngIf="name.invalid && name.touched" class="errors">
+            <div *ngIf="name.errors!['required']">Le nom est requis</div>
+          </div>
+        <input type="email" name="email" placeholder="Email" required="" formControlName = 'email'>
+        <div *ngIf="email.invalid && email.touched" class="errors">
+            <div *ngIf="email.errors!['required']">L'email est requis</div>
+            <div *ngIf="email.errors!['email']">Veuillez saisir une adresse e-mail valide</div>
+            <!-- <div *ngIf="email.errors!['invalidEmail']">L'adresse e-mail est invalide</div> -->
+          </div>
+        <input type="password" name="pswd" placeholder="Password" required="" formControlName="password">
+        <div *ngIf="password.touched"> 
+            <div *ngIf="password.invalid" class="errors">
+              <div *ngIf="password.errors!['required']">Le mot de passe est requis</div>
+              <div *ngIf="password.errors!['minlength']">Le mot de passe doit contenir au moins 8 caractères</div>
+              <div *ngIf="password.errors!['pattern']">Le mot de passe doit inclure au moins une lettre majuscule, une lettre minuscule et un chiffre</div>
+            </div>
+        </div>
+        <button (click)="onSignUp()">Sign up</button>
+    </form>
+</div>

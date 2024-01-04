@@ -1,0 +1,57 @@
+.input-box {
+    width: 80%;
+}
+
+#form-title {
+    margin-left: 5%;
+    padding-top: 20px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+}
+
+.options {
+    margin-right: 20%;
+}
+
+.no-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.radio-btn {
+    margin-top: -5%;
+}
+
+#submit-button {
+    position: absolute;
+    left: 80%;
+}
+
+#price-input {
+    margin-top: 3%;
+}
+
+.buttons {
+    display: flex;
+    justify-content:center;
+}
+
+.buttons #close-btn {
+    margin-left: 45%;
+}
+
+#update-button {
+    background-color: green;
+    color: white;
+    position: absolute;
+    left: 80%;
+}

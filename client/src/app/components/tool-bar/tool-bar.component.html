@@ -1,0 +1,22 @@
+<p>
+    <mat-toolbar class="tool-bar">
+     <button mat-icon-button class="example-icon">
+      <mat-icon>shopping_basket</mat-icon>
+    </button>
+    <span>Family Shopping List</span>
+    <span class="example-spacer"></span>
+    <button *ngIf="isProductsPage" id="share-button" mat-raised-button color="warn" (click)="openDialog()">Share Product</button>
+    <button *ngIf="isProductsPage" id="add-button" mat-raised-button color="warn" (click)="openDialog()">Add Product</button>
+    <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="isProductsPage">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Profile <mat-icon>person</mat-icon></button>
+      <button mat-menu-item>
+        <mat-icon>message</mat-icon>
+        <mat-badge matBadgeColor="warn" matBadge="3" matBadgePosition="above before" [matBadgeSize]="'small'">Messages</mat-badge>
+      </button>
+      <button mat-menu-item (click)="logout()"><mat-icon>close</mat-icon>Disconnect</button>
+    </mat-menu>
+  </mat-toolbar>
+</p>

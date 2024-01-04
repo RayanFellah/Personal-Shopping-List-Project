@@ -1,0 +1,40 @@
+<h1 id="form-title">Add Product From</h1>
+<form class="column center" [formGroup]="productForm">
+    <mat-form-field appearance="outline" class="input-box">
+        <mat-label>Product Name</mat-label>
+        <input matInput placeholder="Product Name" formControlName="productName">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="input-box">
+        <mat-label>Product Category </mat-label>
+        <mat-select formControlName="productCategory">
+            <mat-option *ngFor="let category of categories" [value]="category">
+            {{category}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="input-box">
+        <mat-label> Choose a date </mat-label>
+        <input matInput placeholder="Choose a date" [matDatepicker]="picker" value="" formControlName="date">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker> 
+    </mat-form-field>
+    <mat-radio-group aria-label="Select an option" class="options" formControlName="productFreshness">
+        <h2>Product Freshness</h2>
+        <div class="no-wrap radio-btn">
+            <mat-radio-button [value]="fresh" *ngFor="let fresh of freshnessList" class="option" color="primary"> {{ fresh }} </mat-radio-button>
+        </div>
+        </mat-radio-group>
+    <mat-form-field appearance="outline" class="input-box" id="price-input">
+        <mat-label>Price</mat-label>
+        <input matInput placeholder="Price" type="number" min="0" step="0.10" formControlName="price">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="input-box">
+        <mat-label>Comment</mat-label>
+        <input matInput placeholder="Comment" formControlName="comments">
+    </mat-form-field>
+</form>
+<div class="buttons">
+    <button mat-raised-button color="warn" id="close-btn" mat-dialog-close>Close</button>
+    <button mat-raised-button color="primary" id="submit-button" (click)="addProduct()" *ngIf="!data">Submit</button>
+    <button mat-raised-button id="update-button" (click)="updateProduct()" *ngIf="data">Update</button>
+</div>

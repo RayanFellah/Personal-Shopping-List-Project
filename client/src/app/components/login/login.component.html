@@ -1,0 +1,35 @@
+<!-- <div class="main">  	
+		<div class="login">
+		<div class="container">
+			<form>
+				<label>Sign In</label>
+				<div class="data">
+					<input type="email" name="email" placeholder="Email" required="" [(ngModel)] = 'signInObj.email'>
+					<input type="password" name="pswd" placeholder="Password" required="" [(ngModel)] = 'signInObj.password'>
+					<button (click)="onSignIn()">Login</button>
+				</div>
+			</form>
+			<p class="redirect">Not a member? <a routerLink="../signup">Register</a></p>
+		</div>
+	</div>
+</div> -->
+
+<div class="container">
+	<div class="signin">
+			<form>
+				<label>Sign In</label>
+				<div class="data">
+					<div class="inputs">
+						<input type="email" name="email" placeholder="Email" required="" [(ngModel)] = 'signInObj.email'>
+						<input class="pswd" [type]=" hidePassword ? 'password' : 'text'" name="pswd" placeholder="Password" required="" [(ngModel)] = 'signInObj.password'>
+					</div>
+					<!-- <button mat-icon-button color="primary" id="view-pswrd-btn" (click)="showPassword()">
+						<mat-icon>remove_red_eye</mat-icon>
+					</button> -->
+					<button id='login-btn' (click)="onSignIn()">Login</button>
+				</div>
+				<p class="redirect">Not a member? <a routerLink="../signup">Register</a></p>
+			</form>
+	</div>
+</div>
+

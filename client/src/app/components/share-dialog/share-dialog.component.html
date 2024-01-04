@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Share Product With Someone</h1>
+<div mat-dialog-content>
+  <p>To whom would you like to share it?</p>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="person">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button>Close</button>
+  <button mat-button [mat-dialog-close]="person" cdkFocusInitial (click)="share()">Share</button>
+</div>
